@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mycat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list *ngFor="let cat of catData ;let idx = index;">
+  <ion-item (click)="openDetail(cat);">
+    <ion-row>ชื่อแมว:{{cat.catName}}</ion-row>
+    <ion-row>อายุ:{{cat.age}}</ion-row>
+  </ion-item>
+</ion-list>
+</ion-content>
