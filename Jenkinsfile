@@ -6,27 +6,21 @@ pipeline {
    stages {
       stage('NPM Setup') {
       steps {
-         sh 'npm install'
+         bat 'npm install'
       }
    }
 
    stage('Android Build') {
    steps {
-      sh 'ionic cordova build android --release'
+      bat 'ionic cordova build android --release'
    }
   }
 
    stage('APK Sign') {
    steps {
-      sh 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-cat.jks app-release-unsigned.apk cat123'
+      bat 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-cat.jks app-release-unsigned.apk cat123'
    }
    }
-
-   stage('Stage Web Build') {
-      steps {
-        sh 'npm run build --prod'
-    }
-  }
 
    stage('Publish Android') {
      steps {
