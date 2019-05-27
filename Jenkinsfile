@@ -1,12 +1,12 @@
 pipeline {
    agent any
       environment {
-         PATH='C:\Program Files\Git\usr\bin'
+         PATH='/usr/local/bin:/usr/bin:/bin'
       }
    stages {
       stage('NPM Setup') {
       steps {
-         bat 'npm install'
+         bat('npm install')
       }
    }
 
