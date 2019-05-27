@@ -10,12 +10,6 @@ pipeline {
       }
    }
 
-   stage('IOS Build') {
-   steps {
-      sh 'ionic cordova build ios --release'
-     } 
-  }
-
    stage('Android Build') {
    steps {
       sh 'ionic cordova build android --release'
@@ -33,18 +27,6 @@ pipeline {
         sh 'npm run build --prod'
     }
   }
-
-   stage('Publish Firebase Web') {
-      steps {
-      sh 'firebase deploy --token "Your Token Key"'
-   }
-  }
-
-   stage('Publish iOS') {
-      steps {
-       echo "Publish iOS Action"
-    }
-   }
 
    stage('Publish Android') {
      steps {
