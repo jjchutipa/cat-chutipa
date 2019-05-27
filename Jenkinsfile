@@ -12,13 +12,13 @@ pipeline {
 
    stage('Android Build') {
    steps {
-      bat('ionic cordova build android --release')
+      bat 'ionic cordova build android --release'
    }
   }
 
    stage('APK Sign') {
    steps {
-      bat('jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat')
+      bat 'jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat'
    }
    }
 
