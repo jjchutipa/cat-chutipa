@@ -9,7 +9,7 @@
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
-    "apiSign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-cat.jks app-release-unsigned.apk cat123"
+    "apiSign": "jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",

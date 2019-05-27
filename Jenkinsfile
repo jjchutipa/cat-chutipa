@@ -18,7 +18,7 @@ pipeline {
 
    stage('APK Sign') {
    steps {
-      bat 'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-cat.jks app-release-unsigned.apk cat123'
+      bat 'jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat'
    }
    }
 
