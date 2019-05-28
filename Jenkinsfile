@@ -4,23 +4,30 @@ pipeline {
          PATH='/usr/local/bin:/usr/bin:/bin'
       }
    stages {
-   stage('Android Build') {
+
+        stage('Node Version') {
    steps {
-      bat '-ionic cordova build android --release'
+      bat 'node -v'
    }
   }
 
-   stage('APK Sign') {
-   steps {
-      bat '-jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat'
-   }
-   }
+//    stage('Android Build') {
+//    steps {
+//       bat 'ionic cordova build android --release'
+//    }
+//   }
 
-   stage('Publish Android') {
-     steps {
-    echo "Publish Android API Action"
-   }
-  }
+//    stage('APK Sign') {
+//    steps {
+//       bat 'jarsigner -storepass cat123 -keystore keys/cat123.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk myCat'
+//    }
+//    }
+
+//    stage('Publish Android') {
+//      steps {
+//     echo "Publish Android API Action"
+//    }
+//   }
 
  }
 }
